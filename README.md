@@ -2,7 +2,7 @@
 To maintain an easy-to-use, community-driven tutorial platform, we have several important rules to follow.
 
 1. **Topic Structure:**
-   - Every topic is a unique, simple, and permanent folder with a URL-safe name (e.g., "docker").
+   - Every topic is a unique, simple, and permanent folder with a URL-safe lowercase name (e.g., "docker")
 
 2. **Metadata for Topics:**
    - Each topic has a reserved path `_index/_index.yaml`. This file contains metadata related to the current topic and follows this structure:
@@ -29,7 +29,7 @@ To maintain an easy-to-use, community-driven tutorial platform, we have several 
          ru: Docker — это широко используемый инструмент с открытым исходным кодом для контейнеризации...
      ```
 3. **Tutorial Naming:**
-   - Tutorials must have simple, URL-safe, and SEO-friendly folder names (e.g., "how-to-create-a-docker-container").
+   - Tutorials must have simple, URL-safe, lowercase, and SEO-friendly folder names (e.g., "how-to-create-a-docker-container").
 
 4. **Tutorial Metadata:**
    - Each tutorial folder contains a reserved `_index.yaml` file with the following structure:
