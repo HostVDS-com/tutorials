@@ -67,30 +67,30 @@ Command to create a key with the specified parameters:
 ```
 ssh-keygen –t rsa –b 2048 –C Win-Ubuntu –N ssh –f C:\Users\jetcry\ssh_keys\id_rsa2048
 ```
-<p align="center"><img alt="ssh keygen " src=/SSH/SSH-key-generation/static/en_image_01.png width=1024></p>
+<p align="center"><img alt="ssh keygen " src=/topics/linux-basics/ssh-key-generation/static/en_image_01.png  width=1024></p>
 
 Let's take a look at the process of creating the ed25519 key without specifying parameters:
 ```
 ssh-keygen –t ed25519
 ```
-<p align="center"><img alt="ssh keygen ed25519" src=/SSH/SSH-key-generation/static/en_image_02.png width=1024></p>
+<p align="center"><img alt="ssh keygen ed25519" src=/topics/linux-basics/ssh-key-generation/static/en_image_02.png width=1024></p>
 Here we have specified the key name, password (passphrase).
 The key that was created was saved in the user's root folder.
 For Ububntu/Debian, the command syntax is similar. Let's create a key for Ubuntu. Let's check that it appeared in the .ssh home directory. 
-<p align="center"><img alt="ssh-keygen ubuntu" src=/SSH/SSH-key-generation/static/en_image_03.png width=1024></p>
+<p align="center"><img alt="ssh-keygen ubuntu" src=/topics/linux-basics/ssh-key-generation/static/en_image_03.png width=1024></p>
 The key pairs are generated and are located in the .ssh directory of the current Ubuntu user.
 
 ### <a id="title4">4. Key Generation with PuttyGen</a>
 In case you do not have OpenSSH installed, for example, on Windows 7 it is not included in the basic software set, an alternative way to create a key is to use the PuttyGen application, available for download from the official website [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
 Select the key type and start generating it. In our case, we chose the key type – RSA, the key length is 2048 bits.
-<p align="center"><img alt="Puttygen" src=/SSH/SSH-key-generation/static/en_image_04.png width=600></p>
+<p align="center"><img alt="Puttygen" src=/topics/linux-basics/ssh-key-generation/static/en_image_04.png width=600></p>
 During generation, you need to randomly move the mouse across the screen, this will create a unique key. 
-<p align="center"><img alt="Puttygen_move_mouse" src=/SSH/SSH-key-generation/static/en_image_05.png width=600></p>
+<p align="center"><img alt="Puttygen_move_mouse" src=/topics/linux-basics/ssh-key-generation/static/en_image_05.png width=600></p>
 Once the key has been created, it can be protected with a passphrase. After that, you need to save the public and private keys, preferably create a .ssh folder for the current user beforehand, e.g. C:\Users\jetcry\.ssh
-<p align="center"><img alt="Puttygen_save key" src=/SSH/SSH-key-generation/static/en_image_06.png width=600></p>
+<p align="center"><img alt="Puttygen_save key" src=/topics/linux-basics/ssh-key-generation/static/en_image_06.png width=600></p>
 Here's how Windows displays the keys you've created:
-<p align="center"><img alt="Puttygen_end" src=/SSH/SSH-key-generation/static/en_image_07.png width=600></p>
+<p align="center"><img alt="Puttygen_end" src=/topics/linux-basics/ssh-key-generation/static/en_image_07.png width=600></p>
 The key generation is complete. 
 
 ### <a id="title5">Conclusion</a>
