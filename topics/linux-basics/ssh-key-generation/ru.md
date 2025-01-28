@@ -70,30 +70,30 @@ ssh-keygen [опции]
 ```
 ssh-keygen –t rsa –b 2048 –C Win-Ubuntu –N ssh –f C:\Users\jetcry\ssh_keys\id_rsa2048
 ```
-<p align="center"><img alt="ssh keygen " src=/SSH/SSH-key-generation/static/ru_image_01.png width=1024></p>
+<p align="center"><img alt="ssh keygen " src=/topics/linux-basics/ssh-key-generation/static/ru_image_01.png width=1024></p>
 
 Давайте рассмотрим процесс создания ключа ed25519 без указания дополнительных параметров: 
 ```
 ssh-keygen –t ed25519
 ```
-<p align="center"><img alt="ssh keygen ed25519" src=/SSH/SSH-key-generation/static/ru_image_02.png width=1024></p>
+<p align="center"><img alt="ssh keygen ed25519" src=/topics/linux-basics/ssh-key-generation/static/ru_image_02.png width=1024></p>
 Здесь мы указали имя ключа, пароль (парольную фразу, passphrase).
 Созданный ключ был сохранен в корневой папке пользователя.
 Для Ububntu/Debian синтаксис команд аналогичен. Создадим ключ для Ubuntu. Проверим, что он появился в .ssh домашней директории. 
-<p align="center"><img alt="ssh-keygen ubuntu" src=/SSH/SSH-key-generation/static/ru_image_03.png width=1024></p>
+<p align="center"><img alt="ssh-keygen ubuntu" src=/topics/linux-basics/ssh-key-generation/static/ru_image_03.png width=1024></p>
 Пары ключей сгенерированы и находятся в директории .ssh текущего пользователя Ubuntu.
 
 ### <a id="title4">4.	Генерация ключа с помощью PuttyGen</a>
 В случае, если у Вас не установлен OpenSSH, например, на Windows 7 его нет в базовом наборе программного обеспечения, альтернативным способом создания ключа является использование приложения PuttyGen, доступного к скачиванию с официального сайта [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
 
 Выбираем тип ключа и начинаем его генерацию. В нашем случае мы выбрали тип ключа – RSA, длина ключа – 2048 бит.
-<p align="center"><img alt="Puttygen" src=/SSH/SSH-key-generation/static/ru_image_04.png width=600></p>
+<p align="center"><img alt="Puttygen" src=/topics/linux-basics/ssh-key-generation/static/ru_image_04.png width=600></p>
 Во время генерации необходимо хаотично двигать мышкой по экрану, это позволит создать неповторимый ключ. 
-<p align="center"><img alt="Puttygen_move_mouse" src=/SSH/SSH-key-generation/static/ru_image_05.png width=600></p>
+<p align="center"><img alt="Puttygen_move_mouse" src=/topics/linux-basics/ssh-key-generation/static/ru_image_05.png width=600></p>
 После того, как ключ будет создан, его можно защитить с помощью парольной фразы. После этого необходимо сохранить публичный и приватный ключи, желательно предварительно создать папку .ssh для текущего пользователя, например C:\Users\jetcry\.ssh
-<p align="center"><img alt="Puttygen_save key" src=/SSH/SSH-key-generation/static/ru_image_06.png width=600></p>
+<p align="center"><img alt="Puttygen_save key" src=/topics/linux-basics/ssh-key-generation/static/ru_image_06.png width=600></p>
 Вот как отображает созданные ключи ОС Windows:
-<p align="center"><img alt="Puttygen_end" src=/SSH/SSH-key-generation/static/ru_image_07.png width=600></p>
+<p align="center"><img alt="Puttygen_end" src=/topics/linux-basics/ssh-key-generation/static/ru_image_07.png width=600></p>
 Генерация ключей завершена. 
 
 ### <a id="title5">Краткие итоги</a>
