@@ -1,0 +1,18 @@
+# _index/_index.yaml
+
+# List of related topics for recommended reads (optional)
+related_topics:
+
+
+# Title of the topic translated to other languages (required)
+title:
+  i18n:
+    # ISO 639-1 language code followed by a translation
+    en: SSH key generation 
+    ru: Генерация SSH-ключей
+
+# Short description of the topic with translation (optional)
+description:
+  i18n:
+    en: Let's consider SSH key generation on the example of Ubuntu, Windows. We will use ssh-keygen and PuttyGen.
+    ru: Рассмотрим генерацию SSH-ключей на примере Ubuntu, Windows. Будем использовать ssh-keygen и PuttyGen.
