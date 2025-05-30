@@ -248,7 +248,7 @@ your_server_ip:5901
 ```
 <p align="center"><img alt="удаленное подключение" src=/topics/installing-the-server-software/how-to-install-vnc-server/static/ru_image_16.png width=1024></p>
 
-Рабочийстол будет выглядеть следующим образом:
+Рабочий стол будет выглядеть следующим образом:
 <p align="center"><img alt="удаленный рабочий стол" src=/topics/installing-the-server-software/how-to-install-vnc-server/static/ru_image_17.png width=1024></p>
 VNC не был разработан с учетом высоких требований к безопасности, поэтому для защиты удаленного рабочего стола мы рекомендуем применить туннелирование через SSH. 
 
