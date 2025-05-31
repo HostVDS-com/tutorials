@@ -1,4 +1,4 @@
-# 🎫 Как установить phpMyAdmin на Ubuntu Seerver 24.04 LTS 🎫
+# 🎫 Как установить phpMyAdmin на Ubuntu Server 24.04 LTS 🎫
 [1. Установка mySQL](#title1)<br>
 [2. Установка Apache](#title2)<br>
 [3. Установка php](#title3)<br>
