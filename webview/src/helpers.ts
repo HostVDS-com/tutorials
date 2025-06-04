@@ -3,7 +3,7 @@ import fs from 'fs/promises';
 import * as mdvs from 'mdsvex';
 import { error } from '@sveltejs/kit';
 import { parse as htmlParse } from 'node-html-parser';
-import type { Collection, TocItem, Topic, Tutorial } from './routes/topics';
+import type { Collection, ContentsItem, Topic, Tutorial } from './routes/topics';
 import { parse, stringify } from 'yaml'
 import slug from 'rehype-slug';
 
@@ -137,7 +137,7 @@ export async function fetchCollection(): Promise<Collection> {
 
             const html = md.code;
             const dom = htmlParse(html)
-            const toc: TocItem[] = []
+            const contents: ContentsItem[] = []
             for (const el of dom.querySelectorAll('img')) {
                 const src = el.getAttribute("src");
                 if (!src) continue;
@@ -167,7 +167,7 @@ export async function fetchCollection(): Promise<Collection> {
                 const title = el.textContent;
                 const level = parseInt(el.tagName.toLowerCase()?.replace('h', '') ?? "1");
                 const id = el.id
-                toc.push({
+                contents.push({
                     title,
                     level,
                     id,
@@ -186,7 +186,7 @@ export async function fetchCollection(): Promise<Collection> {
                 markdown: dom.outerHTML,
                 description,
                 cover,
-                toc,
+                tableOfContents: contents,
             } as Tutorial;
         };
 

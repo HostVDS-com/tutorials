@@ -78,7 +78,7 @@
 			{#if currTopic}
 				<div class="relative hidden md:flex md:w-5/12 lg:w-4/12">
 					<div class="w-full">
-						<Sidebar {collection} toc={currTutorial?.toc} />
+						<Sidebar {collection} contents={currTutorial?.tableOfContents} />
 					</div>
 				</div>
 			{/if}

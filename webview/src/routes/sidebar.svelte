@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Collection, TocItem } from './topics';
+	import type { Collection, ContentsItem } from './topics';
 	import { page } from '$app/state';
 	import { cn } from '@/utils';
 	import github from '@/static/github.svg';
@@ -9,29 +9,29 @@
 
 	let {
 		collection,
-		toc
+		contents
 	}: {
 		collection: Collection;
-		toc?: TocItem[];
+		contents?: ContentsItem[];
 	} = $props();
 
 	const topics = $derived(collection[getLocale()].filter((t) => t.tutorials.length > 0));
 	let currTopicSlug = $derived(page.params.topic);
 
-	const tocFiltered = $derived.by(() => {
-		if (!toc) return [];
-		return toc.filter((t, i) => t.level > 1 || i > 0);
+	const contentsFilter = $derived.by(() => {
+		if (!contents) return [];
+		return contents.filter((t, i) => t.level > 1 || i > 0);
 	});
 </script>
 
 <div class="sticky top-[100px] flex flex-col gap-2 p-2">
-	{#if toc}
+	{#if contents}
 		<!-- render table of content -->
 		<div class="mb-2 flex flex-col gap-5">
 			<div class="px-2 text-xl font-semibold hover:opacity-75">{m.content()}</div>
 		</div>
 		<div class="flex flex-col gap-1">
-			{#each tocFiltered as content}
+			{#each contentsFilter as content}
 				<a
 					href={`#${content.id}`}
 					class={cn(

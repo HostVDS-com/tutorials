@@ -14,7 +14,7 @@ export interface Topic {
     tutorials: Tutorial[];
 }
 
-export interface TocItem {
+export interface ContentsItem {
     title: string;
     level: number;
     id: string;
@@ -29,7 +29,7 @@ export interface Tutorial {
     content: string;
     updatedAt: Date;
     markdown: string;
-    toc: TocItem[];
+    tableOfContents: ContentsItem[];
 }
 
 export function findTopic(topics: Topic[], topicSlug: string) {
