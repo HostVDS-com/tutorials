@@ -117,7 +117,7 @@
 	<div class="flex flex-row gap-2">
 		{@render tags()}
 	</div>
-	<!-- <div class="mb-5"></div> -->
+
 	<div
 		class="tutorial text-md container flex w-full flex-row flex-wrap content-center items-center justify-between gap-2"
 	>
