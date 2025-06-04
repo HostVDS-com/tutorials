@@ -6,9 +6,8 @@
 
 	import TutorialCard from './tutorial-card.svelte';
 	import { getLocale, localizeHref } from '../../../paraglide/runtime';
-	import type { LangCode, Tutorial } from '../../topics';
 	import { tutorialLangs } from '../../../helpers';
-	import { articleNotTranslated, m, thisPageDoesNotExistYet } from '../../../paraglide/messages';
+	import { m } from '../../../paraglide/messages';
 	import Link from '@/components/link.svelte';
 
 	const collection = getCollection();

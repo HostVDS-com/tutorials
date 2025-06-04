@@ -1,9 +1,7 @@
 <script lang="ts">
 	import type { Collection, TocItem } from './topics';
-	import type { LayoutProps } from './$types';
 	import { page } from '$app/state';
 	import { cn } from '@/utils';
-	import logo from '@/static/logo.svg';
 	import github from '@/static/github.svg';
 	import { getLocale } from '../paraglide/runtime';
 	import { m } from '../paraglide/messages';
@@ -19,7 +17,6 @@
 
 	const topics = $derived(collection[getLocale()].filter((t) => t.tutorials.length > 0));
 	let currTopicSlug = $derived(page.params.topic);
-	const currTutorial = $derived(collection[getLocale()].find((t) => t.slug === currTopicSlug));
 
 	const tocFiltered = $derived.by(() => {
 		if (!toc) return [];
@@ -29,6 +26,7 @@
 
 <div class="sticky top-[100px] flex flex-col gap-2 p-2">
 	{#if toc}
+		<!-- render table of content -->
 		<div class="mb-2 flex flex-col gap-5">
 			<div class="px-2 text-xl font-semibold hover:opacity-75">{m.content()}</div>
 		</div>
@@ -45,11 +43,13 @@
 			{/each}
 		</div>
 	{:else}
+		<!-- render topics list -->
 		<div class="mb-2 flex flex-col gap-5">
 			<Link href="/"
 				><div class="px-2 text-xl font-semibold hover:opacity-75">{m.topics()}</div></Link
 			>
 		</div>
+
 		<div class="flex flex-col gap-1">
 			{#each topics as topic}
 				<Link

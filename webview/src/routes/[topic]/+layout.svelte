@@ -8,7 +8,7 @@
 	const collection = getCollection();
 	const currTopic = $derived(collection[getLocale()].find((t) => t.slug === topic));
 
-	let { children, data }: LayoutProps = $props();
+	let { children }: LayoutProps = $props();
 </script>
 
 {#if !currTopic}
@@ -21,9 +21,6 @@
 	<div class="w-full">
 		<div class="flex max-w-[900px] flex-col gap-5">
 			{#key page.url}
-				<!-- <div class="mb-2 flex flex-col gap-5"> -->
-				<!-- 	<h1 class="text-4xl font-semibold">{currTopic?.title}</h1> -->
-				<!-- </div> -->
 				<div class="mb-2 flex w-full flex-col gap-5">
 					{@render children()}
 				</div>

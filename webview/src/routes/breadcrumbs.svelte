@@ -38,6 +38,7 @@
 				<Breadcrumb.Link href={`/${currTopic?.slug}`}>{currTopic?.title}</Breadcrumb.Link>
 			</Breadcrumb.Item>
 		{/if}
+
 		{#if currTutorial}
 			<Breadcrumb.Separator><ChevronRight /></Breadcrumb.Separator>
 			<Breadcrumb.Item>

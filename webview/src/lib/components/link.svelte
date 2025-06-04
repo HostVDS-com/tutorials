@@ -1,4 +1,8 @@
 <script lang="ts">
+	/**
+	 * A link component that localizes the href
+	 */
+
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
 	import { deLocalizeHref, localizeHref } from '../../paraglide/runtime';

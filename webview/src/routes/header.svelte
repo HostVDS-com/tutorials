@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { Collection } from './topics';
 	import { page } from '$app/state';
 	import github from '@/static/github-white.svg';
 	import logo from '@/static/logo.svg';
@@ -9,14 +8,9 @@
 	import { getLocale, setLocale } from '../paraglide/runtime';
 	import Link from '@/components/link.svelte';
 
-	let { collection }: { collection: Collection } = $props();
-
-	let currTopicSlug = $derived(page.params.topic);
-
 	function switchToLanguage(newLanguage: AvailableLanguageTag) {
 		setLocale(newLanguage);
 		reroute({ url: page.url });
-		// setLanguageTag(newLanguage);
 	}
 </script>
 
@@ -24,16 +18,23 @@
 	class="flex w-full flex-row bg-sky-950/70 px-5 backdrop-blur-md will-change-scroll md:px-3 lg:px-0"
 >
 	<div class="container m-auto flex flex-row items-center justify-between text-white">
+		<!-- left side -->
 		<div class="flex flex-row items-center text-xl">
+			<!-- logo -->
 			<Link class="flex flex-row items-center" href="/">
 				<img src={logo} alt="HostVDS Community Tutorials" class="h-[25px] md:h-[45px]" />
 				<h3 class="mt-1 ml-2 hidden align-middle md:flex">Community Tutorials</h3>
 			</Link>
 		</div>
+
+		<!-- right side -->
 		<div class="md:text-md flex flex-row items-center gap-2 text-xs md:gap-3">
+			<!-- topics link -->
 			<Link class="flex flex-col items-center transition-opacity hover:opacity-75" href="/">
 				<div class="mt-1 ml-2 align-middle">{m.topics()}</div>
 			</Link>
+
+			<!-- hostvds link -->
 			<a
 				class="flex flex-col items-center transition-opacity hover:opacity-75"
 				target="_blank"
@@ -41,6 +42,8 @@
 			>
 				<div class="mt-1 ml-2 align-middle">{m.products()}</div>
 			</a>
+
+			<!-- github link -->
 			<a
 				class="flex flex-col items-center transition-opacity hover:opacity-75"
 				target="_blank"
@@ -48,6 +51,8 @@
 			>
 				<img src={github} alt="GitHub" class="mt-[3px] h-3 md:h-4" />
 			</a>
+
+			<!-- language switcher -->
 			<div class="flex flex-col items-center">
 				<div class="flex flex-row items-center">
 					{#if getLocale()}

@@ -1,7 +1,10 @@
-export type LangCode = 'en' | 'ru' | 'zh';
-
 export type Collection = {
-    [key in LangCode]: Topic[];
+    // main languages that are always present
+    en: Topic[];
+    ru: Topic[];
+
+    // other optional languages
+    [key: string]: Topic[];
 }
 
 export interface Topic {

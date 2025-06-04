@@ -3,7 +3,7 @@ import fs from 'fs/promises';
 import * as mdvs from 'mdsvex';
 import { error } from '@sveltejs/kit';
 import { parse as htmlParse } from 'node-html-parser';
-import type { Collection, LangCode, TocItem, Topic, Tutorial } from './routes/topics';
+import type { Collection, TocItem, Topic, Tutorial } from './routes/topics';
 import { parse, stringify } from 'yaml'
 import slug from 'rehype-slug';
 
@@ -18,17 +18,17 @@ const LANGUAGES = ['en', 'ru'] as const;
 interface TopicIndex {
     related_topics?: string[],
     title: {
-        [key in LangCode]: string;
+        [key: string]: string;
     },
     description: {
-        [key in LangCode]: string;
+        [key: string]: string;
     },
 }
 
 interface TutorialIndex {
     tags: string[];
     description?: {
-        [key in LangCode]: string;
+        [key: string]: string;
     };
     cover?: string;
 }
@@ -48,8 +48,7 @@ export async function fetchCollection(): Promise<Collection> {
     // // recursively copy every file and folder
     // await fs.cp(ROOT_TOPIC_DIR, STATIC_TOPICS_DIR, { recursive: true, force: true });
 
-    for (const _lang of Object.keys(collection)) {
-        const lang = _lang as LangCode;
+    for (const lang of Object.keys(collection)) {
 
         // const TOPICS_DIR = "../topics";
         const topics = await fs.readdir(STATIC_TOPICS_DIR, 'utf-8');
@@ -64,11 +63,19 @@ export async function fetchCollection(): Promise<Collection> {
 
 
         async function parseTopic(topicPath: string): Promise<Topic> {
-            const indexPath = path.resolve(topicPath, '_index', '_index.yaml');
+            const indexPath = path.resolve(topicPath, 'index.yaml');
             const topicIndex = await fs.readFile(indexPath, 'utf-8');
             const index: TopicIndex = parse(topicIndex);
             if (!isValidTopic(index)) {
                 throw new Error(`topic ${topicPath} is malformed:\n${stringify(topicIndex)}`);
+            }
+
+            if (!index.title[lang]) {
+                throw new Error(`topic ${topicPath} is missing title`);
+            }
+
+            if (!index.description[lang]) {
+                throw new Error(`topic ${topicPath} is missing description`);
             }
 
             const topic: Topic = {
@@ -83,7 +90,7 @@ export async function fetchCollection(): Promise<Collection> {
 
         async function parseTutorial(tutorial: string, topic: string): Promise<Tutorial> {
             const tutorialPath = path.resolve(STATIC_TOPICS_DIR, topic, tutorial);
-            const tutorialIndex = await fs.readFile(path.resolve(tutorialPath, '_index.yaml'), 'utf-8');
+            const tutorialIndex = await fs.readFile(path.resolve(tutorialPath, 'index.yaml'), 'utf-8');
             const index: TutorialIndex = parse(tutorialIndex);
             if (!isValidTutorial(index)) {
                 throw new Error(`tutorial ${tutorialPath} is malformed:\n${stringify(tutorialIndex)}`);
@@ -224,7 +231,7 @@ export const topicLangs = (topicSlug: string, collection: Collection) => {
     const languages: [string, Topic][] = [];
 
     for (const lang of Object.keys(collection)) {
-        const topic = collection[lang as LangCode].find((t) => t.slug === topicSlug);
+        const topic = collection[lang].find((t) => t.slug === topicSlug);
         if (topic) {
             languages.push([lang, topic]);
         }
@@ -237,7 +244,7 @@ export const tutorialLangs = (tutorialSlug: string, topicSlug: string, collectio
     const languages: [string, Tutorial][] = [];
 
     for (const lang of Object.keys(collection)) {
-        const tut = collection[lang as LangCode]
+        const tut = collection[lang]
             .find((t) => t.slug === topicSlug)
             ?.tutorials.find((t) => t.slug === tutorialSlug);
         if (tut) {
