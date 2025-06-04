@@ -1,7 +1,5 @@
 export type Collection = {
     // main languages that are always present
-    en: Topic[];
-    ru: Topic[];
 
     // other optional languages
     [key: string]: Topic[];

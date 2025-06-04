@@ -12,6 +12,7 @@ import rehypeExternalLinks from 'rehype-external-links';
 
 // @ts-ignore
 import rehypeAddClasses from 'rehype-add-classes';
+import { locales } from './paraglide/runtime';
 
 const LANGUAGES = ['en', 'ru'] as const;
 
@@ -35,9 +36,6 @@ interface TutorialIndex {
 
 export async function fetchCollection(): Promise<Collection> {
     const collection: Collection = {
-        en: [],
-        ru: [],
-        zh: [],
     };
 
     // cleanup
@@ -48,7 +46,7 @@ export async function fetchCollection(): Promise<Collection> {
     // // recursively copy every file and folder
     // await fs.cp(ROOT_TOPIC_DIR, STATIC_TOPICS_DIR, { recursive: true, force: true });
 
-    for (const lang of Object.keys(collection)) {
+    for (const lang of locales) {
 
         // const TOPICS_DIR = "../topics";
         const topics = await fs.readdir(STATIC_TOPICS_DIR, 'utf-8');
@@ -143,15 +141,13 @@ export async function fetchCollection(): Promise<Collection> {
                 if (!src) continue;
 
                 el.parentNode.innerHTML = `
-                    <div class="w-full flex flex-col items-center">
                         <img
-                            alt=${el.getAttribute("alt")}
-                            src=${src.replace(/\.png$/, ".webp")}
+                            alt="${el.getAttribute("alt")}"
+                            src="${src.replace(/\.png$/, ".webp")}"
                             loading="lazy"
                             class="aspect-ratio-16/9 object-contain max-w-96"
                             decoding="async"
                         >
-                    </div>
                 `;
             }
 
@@ -200,10 +196,9 @@ export async function fetchCollection(): Promise<Collection> {
             const tutorials = await fs.readdir(topicPath, 'utf-8');
 
             for (const tutorialName of tutorials) {
-                if (tutorialName.startsWith('_')) {
+                if (tutorialName === 'index.yaml') {
                     continue;
                 }
-                const tutorialPath = path.resolve(topicPath, tutorialName);
                 try {
                     const tutorial = await parseTutorial(tutorialName, topicName);
                     topic.tutorials.push(tutorial);
@@ -215,14 +210,18 @@ export async function fetchCollection(): Promise<Collection> {
                 }
             }
 
+            if (!collection[lang]) {
+                collection[lang] = [];
+            }
             collection[lang].push(topic);
             topic.tutorials.sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime());
         }
 
-        // sort by date
-
     }
 
+    if (!collection.en.length && !collection.ru.length) {
+        throw new Error('collection is empty');
+    }
 
     return collection;
 }
