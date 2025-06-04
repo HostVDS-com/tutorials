@@ -1,0 +1,21 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+    "communityTutorials": "Community Tutorials",
+    "tutorials": "Tutorials",
+    "tutorial": "Tutorial",
+    "articles": "Articles",
+    "article": "Article",
+    "contribute": "Contribute",
+    "products": "Products",
+    "language": "Language",
+    "content": "Content",
+	"topics": "Topics",
+    "welcome": "Welcome to our community-driven tutorial hub for developers and DevOps engineers. Here you'llWelcome to our community find practical guides, hands-on examples, and real-world solutions for modern software development and infrastructure. Our open platform covers a wide range of topics: from setting up databases and deploying applications, to automation, cloud services, and best practices in security. Learn, share knowledge, and collaborate with peers to solve technical challenges and accelerate your professional growth.",
+    "plsSupport": "Feel free to support and contribute our project on GitHub",
+    "articleNotTranslated": "This article hasn't been translated to your language yet",
+    "noTutorials": "No tutorials found",
+    "seeInOtherLanguages": "See in other languages:",
+    "helpWithTranslation": "Help with translation",
+    "thisPageDoesNotExistYet": "This page does not exist yet",
+    "moreFromTheTopic": "More from the topic"
+}
