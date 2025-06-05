@@ -11,7 +11,7 @@ tags:
   - rsa
   - ecdsa
 
-cover: topics/linux-basics/connect-to-the-server-using-ssh-keys/static/ru_image_00.png
+cover: /topics/linux-basics/connect-to-the-server-using-ssh-keys/static/ru_image_00.png
 
 description:
     ru: В статье рассмотрим как подключиться к серверу с помощью SSH-ключей. Настроим автоматическое и ручное копирование ключей на сервер. Создадим сервера на HostVDS и выполним подключение к нему с помощью SSH-ключей. Настроим дополнительную защиту подключения.
