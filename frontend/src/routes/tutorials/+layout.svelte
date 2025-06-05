@@ -2,7 +2,8 @@
 	import type { LayoutProps } from './$types';
 	import '../../app.css';
 	import { setCollection } from './context.svelte';
-	import { onMount } from 'svelte';
+	import logo from '@/static/logo_white.svg';
+
 	import { locales, localizeHref } from '.././../paraglide/runtime';
 	import Sidebar from './sidebar.svelte';
 	import Breadcrumbs from './breadcrumbs.svelte';
@@ -10,9 +11,11 @@
 	import Header from './header.svelte';
 	import { cn } from '@/utils';
 	import { getLocale } from '../../paraglide/runtime';
+	import { m } from '../../paraglide/messages';
+	import type { Collection } from './topics';
 
 	let { children, data }: LayoutProps = $props();
-	let collection = $state(data?.collection ?? {});
+	let collection: Collection = $state(data?.collection ?? {});
 
 	setCollection(collection);
 
@@ -25,6 +28,8 @@
 		if (currTopic) {
 			return currTopic.description;
 		}
+
+		return m.welcome();
 	});
 
 	let title = $derived.by(() => {
@@ -44,9 +49,19 @@
 
 <svelte:head>
 	<title>{title}</title>
-	{#if description}
-		<meta name="description" content={description} />
+	<meta name="description" content={description} />
+
+	<meta name="keywords" content={currTutorial?.tags.join(', ')} />
+
+	{#if currTutorial?.title}
+		<meta property="og:title" content={title} />
 	{/if}
+	{#if description}
+		<meta property="og:description" content={description} />
+	{/if}
+
+	<meta property="og:image" content={logo} />
+	<meta property="og:url" content="https://hostvds.com/tutorials" />
 	<link
 		href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap&family=Fira+Code:wght@300..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000"
 		rel="stylesheet"
