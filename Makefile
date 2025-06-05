@@ -41,6 +41,6 @@ for img; do \
 done' sh {} +
 
 build-static:
-	cd frontend && yarn run build && cp build/tutorials.html build/index.html
+	cd frontend && yarn run build && cp build/tutorials.html build/index.html && echo "hostvds.com" > build/CNAME
 
 build: clean copy optimize-images
