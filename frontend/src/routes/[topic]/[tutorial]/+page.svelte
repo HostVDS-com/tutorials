@@ -29,7 +29,7 @@
 		return [...mdContainer.querySelectorAll('h1, h2, h3, h4, h5, h6')].map((h) => {
 			return {
 				title: h.textContent,
-				level: h.tagName.toLowerCase().replace(/\s/g, '-'),
+				level: h.tagName.toLowerCase().replace('h', ''),
 				id: h.id
 			};
 		});

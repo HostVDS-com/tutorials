@@ -7,7 +7,6 @@ COPY . .
 RUN yarn install
 RUN apt install rsync magick
 
-RUN -avhr --exclude "*.git" ./topics /app/webview/static/
-RUN find /app/webview/static/topics -type f -name '*.png' -exec sh -c 'for img; do magick "$img" -resize "1080x1080>" -quality 95 "${img%.png}.webp"; done' sh {} +
+RUN -avhr --exclude "*.git" ./topics /app/frontend/static/ && find /app/frontend/static/topics -type f -name '*.png' -exec sh -c 'for img; do magick "$img" -filter lanczos2 -resize "1500x1500>" -quality 90 "${img%.png}.webp"; done' sh {} +
 
 CMD ["yarn", "dev"]

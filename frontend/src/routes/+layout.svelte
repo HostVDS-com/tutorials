@@ -8,7 +8,6 @@
 	import Breadcrumbs from './breadcrumbs.svelte';
 	import { page } from '$app/state';
 	import Header from './header.svelte';
-	import favicon from '@/static/favicon.png';
 	import { cn } from '@/utils';
 	import { getLocale } from '../paraglide/runtime';
 
@@ -52,7 +51,6 @@
 		href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap&family=Fira+Code:wght@300..700"
 		rel="stylesheet"
 	/>
-	<link rel="icon" href={favicon} />
 </svelte:head>
 
 <!-- generate static pages for all locales -->
