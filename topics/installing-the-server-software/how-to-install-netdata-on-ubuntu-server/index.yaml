@@ -1,3 +1,10 @@
 tags:
   - netdata
   - ubuntu
+  - ubuntu 24.04
+
+cover: /topics/installing-the-server-software/how-to-install-netdata-on-ubuntu-server/static/ru_image_00.png
+
+description:
+    ru: В статье рассмотрим как установить NetData на Ubuntu 24.04. Настроим NetData для удаленного мониторинга состояния сервера.
+    en: In this article, we will look at how to install NetData on Ubuntu 24.04. Configure NetData for remote monitoring of the server status.

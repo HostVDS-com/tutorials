@@ -1,3 +1,11 @@
 tags:
   - postgresql
+  - pgadmin
   - ubuntu
+  - ubuntu 24.04
+  
+cover: /topics/databases/how-to-install-postgresql-on-ubuntu-server/static/ru_image_00.png
+
+description:
+    ru: В статье рассмотрим как установить PostgreSQL на Ubuntu 24.04. Выполним первоначальные настройки. Создадим безопасное подключение к СУБД с помощью pgAdmin.
+    en: In this article we will consider how to install PostgreSQL on Ubuntu Server 24.04 LTS. Let's perform the initial settings. Create a secure connection to the DBMS using pgAdmin.
