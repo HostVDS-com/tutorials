@@ -26,26 +26,19 @@ clean:
 copy:
 	rsync -avhr --exclude "*.git" ./topics frontend/static/
 
+# convert pngs to webp
 optimize-images:
-	find frontend/static/topics -type f -name '*.png' -exec sh -c '
-	  CMD=""
-	  if command -v magick >/dev/null 2>&1; then
-		CMD="magick"
-	  elif command -v convert >/dev/null 2>&1; then
-		CMD="convert"
-	  else
-		echo "Neither magick nor convert found!" >&2
-		exit 1
-	  fi
-
-	  for img; do
-		if [ "$CMD" = "magick" ]; then
-		  magick "$img" -filter lanczos2 -resize "1500x1500>" -quality 90 "${img%.png}.webp"
-		else
-		  convert "$img" -filter lanczos2 -resize "1500x1500>" -quality 90 "${img%.png}.webp"
-		fi
-	  done
-	' sh {} +
+	find frontend/static/topics -type f -name '*.png' -exec sh -c 'CMD=""; \
+if command -v magick >/dev/null 2>&1; then CMD="magick"; \
+elif command -v convert >/dev/null 2>&1; then CMD="convert"; \
+else echo "Neither magick nor convert found!" >&2; exit 1; fi; \
+for img; do \
+  if [ "$$CMD" = "magick" ]; then \
+    magick "$$img" -filter lanczos2 -resize "1500x1500>" -quality 90 "$${img%.png}.webp"; \
+  else \
+    convert "$$img" -filter lanczos2 -resize "1500x1500>" -quality 90 "$${img%.png}.webp"; \
+  fi; \
+done' sh {} +
 
 build-static:
 	cd frontend && yarn run build
