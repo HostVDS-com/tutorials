@@ -4,6 +4,8 @@ import * as mdvs from 'mdsvex';
 import { error } from '@sveltejs/kit';
 import { parse as htmlParse } from 'node-html-parser';
 import type { Collection, ContentsItem, Topic, Tutorial } from './routes/topics';
+import 'highlight.js/styles/default.css'
+import hljs from 'highlight.js';
 import { parse, stringify } from 'yaml'
 import slug from 'rehype-slug';
 
@@ -122,10 +124,21 @@ export async function fetchCollection(): Promise<Collection> {
                         } as any
                     ],
                     [rehypeExternalLinks, { target: ['_blank'] }],
-                    [slug, {}]
+                    [slug, {}],
                 ],
                 highlight: {
-                    optimise: false
+                    highlighter: (code, lang) => {
+                        let result = hljs.highlightAuto(
+                            code.replace(/–|—/g, '-')
+                        );
+
+                        // fallback to bash
+                        if (!result.language || result.relevance === 0 || code.includes("sudo ") && result.language !== "bash") {
+                            result = hljs.highlight(code, { language: "bash" });
+                        }
+
+                        return `<pre class="hljs"><code>${result.value}</code></pre>`;
+                    },
                 }
             };
             const md = await mdvs.compile(content, options);
@@ -141,13 +154,15 @@ export async function fetchCollection(): Promise<Collection> {
                 if (!src) continue;
 
                 el.parentNode.innerHTML = `
-                        <img
-                            alt="${el.getAttribute("alt")}"
-                            src="${src.replace(/\.png$/, ".webp")}"
+                        <picture>
+                          <source srcset="${src.replace(/\.png$/, '.webp')}" type="image/webp">
+                          <img
+                            alt="${el.getAttribute('alt')}"
+                            src="${src}"
                             loading="lazy"
                             class="aspect-ratio-16/9 object-contain max-w-96"
-                            decoding="async"
-                        >
+                          >
+                        </picture>
                 `;
             }
 
@@ -175,7 +190,7 @@ export async function fetchCollection(): Promise<Collection> {
 
             return {
                 slug: path.basename(tutorialPath),
-                tags: index.tags,
+                tags: index.tags.map(t => t.toLowerCase().replaceAll(' ', '-')),
                 title,
                 content: contentFmt,
                 updatedAt: updatedAt,
