@@ -1,5 +1,5 @@
 import type { LayoutServerLoad } from './$types';
-import { fetchCollection, } from '../helpers';
+import { fetchCollection, } from '../../helpers';
 
 export const prerender = true;
 

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Link from '@/components/link.svelte';
-	import { getLocale } from '../paraglide/runtime';
+	import { getLocale } from '../../paraglide/runtime';
 	import { getCollection } from './context.svelte';
 	const collections = getCollection();
 	import * as Card from '@/components/ui/card';
-	import { m } from '../paraglide/messages';
+	import { m } from '../../paraglide/messages';
 
 	const topics = $derived(collections[getLocale()].filter((t) => t.tutorials.length > 0));
 </script>
@@ -38,7 +38,7 @@
 
 	<div class="container flex w-full flex-row flex-wrap content-center items-center">
 		{#each topics as topic}
-			<Link href="/{topic.slug}" class="w-full p-1 md:w-1/2 lg:w-1/3 xl:w-1/4">
+			<Link href="/tutorials/{topic.slug}" class="w-full p-1 md:w-1/2 lg:w-1/3 xl:w-1/4">
 				<Card.Root class="h-36 w-full ">
 					<Card.Header>
 						<Card.Title class="text-md line-clamp-1">{topic.title}</Card.Title>

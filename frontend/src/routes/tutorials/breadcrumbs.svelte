@@ -3,8 +3,8 @@
 	import ChevronRight from '@lucide/svelte/icons/chevron-right';
 	import { page } from '$app/state';
 	import { getCollection } from './context.svelte';
-	import { getLocale } from '../paraglide/runtime';
-	import { m } from '../paraglide/messages';
+	import { getLocale } from '../../paraglide/runtime';
+	import { m } from '../../paraglide/messages';
 
 	const { params } = page;
 
@@ -31,18 +31,18 @@
 	<Breadcrumb.List class="flex-col items-start md:flex-row  md:items-center">
 		{#if currTopic}
 			<Breadcrumb.Item>
-				<Breadcrumb.Link href="/">{m.topics()}</Breadcrumb.Link>
+				<Breadcrumb.Link href="/tutorials/">{m.topics()}</Breadcrumb.Link>
 			</Breadcrumb.Item>
 			<Breadcrumb.Separator class="hidden md:inline"><ChevronRight /></Breadcrumb.Separator>
 			<Breadcrumb.Item class="line-clamp-1 max-w-48 text-ellipsis md:max-w-96">
-				<Breadcrumb.Link href={`/${currTopic?.slug}`}>{currTopic?.title}</Breadcrumb.Link>
+				<Breadcrumb.Link href={`/tutorials/${currTopic?.slug}`}>{currTopic?.title}</Breadcrumb.Link>
 			</Breadcrumb.Item>
 		{/if}
 
 		{#if currTutorial}
 			<Breadcrumb.Separator class="hidden md:inline"><ChevronRight /></Breadcrumb.Separator>
 			<Breadcrumb.Item class="line-clamp-1 max-w-48 text-ellipsis md:max-w-96">
-				<Breadcrumb.Link href={`/${currTopic?.slug}/${currTutorial?.slug}`}
+				<Breadcrumb.Link href={`/tutorials/${currTopic?.slug}/${currTutorial?.slug}`}
 					>{currTutorial?.title}</Breadcrumb.Link
 				>
 			</Breadcrumb.Item>

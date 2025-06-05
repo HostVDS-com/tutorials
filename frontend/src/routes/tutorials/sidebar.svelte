@@ -3,8 +3,8 @@
 	import { page } from '$app/state';
 	import { cn } from '@/utils';
 	import github from '@/static/github.svg';
-	import { getLocale } from '../paraglide/runtime';
-	import { m } from '../paraglide/messages';
+	import { getLocale } from '../../paraglide/runtime';
+	import { m } from '../../paraglide/messages';
 	import Link from '@/components/link.svelte';
 
 	let {
@@ -53,7 +53,7 @@
 		<div class="flex flex-col gap-1">
 			{#each topics as topic}
 				<Link
-					href={`/${topic.slug}`}
+					href={`/tutorials/${topic.slug}`}
 					class={cn(
 						'flex cursor-pointer flex-col rounded px-3 py-2 text-gray-800 hover:bg-gray-200',
 						{ ' bg-gray-200 text-sky-500': topic.slug === currTopicSlug }

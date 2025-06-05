@@ -4,10 +4,10 @@
 	import { getCollection } from '../context.svelte';
 	const { topic } = page.params;
 	import TutorialCard from './[tutorial]/tutorial-card.svelte';
-	import { getLocale, localizeHref } from '../../paraglide/runtime';
+	import { getLocale, localizeHref } from '../../../paraglide/runtime';
 	import Link from '@/components/link.svelte';
-	import { topicLangs } from '../../helpers';
-	import { m } from '../../paraglide/messages';
+	import { topicLangs } from '../../../helpers';
+	import { m } from '../../../paraglide/messages';
 
 	const collection = getCollection();
 	const currTopic = $derived(collection[getLocale()].find((t) => t.slug === topic));
@@ -42,7 +42,10 @@
 				{@render noTutorials()}
 			{:else}
 				{#each currTopic.tutorials as tutorial}
-					<Link href="/{topic}/{tutorial.slug}" class="w-full p-1 md:w-1/2 lg:w-1/3 xl:w-1/3">
+					<Link
+						href="/tutorials/{topic}/{tutorial.slug}"
+						class="w-full p-1 md:w-1/2 lg:w-1/3 xl:w-1/3"
+					>
 						<TutorialCard {tutorial} />
 					</Link>
 				{/each}
@@ -65,7 +68,7 @@
 					<div class="flex flex-row gap-2">
 						<span class="font-semibold uppercase">{lang}</span>
 						<a
-							href={localizeHref(`/${topic.slug}`, { locale: lang })}
+							href={localizeHref(`/tutorials/${topic.slug}`, { locale: lang })}
 							class="flex flex-row items-center gap-2 text-sky-700 transition-opacity duration-75 hover:opacity-70"
 						>
 							<span>{topic.title}</span>

@@ -2,7 +2,7 @@
 	import type { LayoutProps } from './$types';
 	import { page } from '$app/state';
 	import { getCollection } from '../context.svelte';
-	import { getLocale } from '../../paraglide/runtime';
+	import { getLocale } from '../../../paraglide/runtime';
 	const { topic } = page.params;
 
 	const collection = getCollection();

@@ -5,10 +5,10 @@
 	const { topic, tutorial } = page.params;
 
 	import TutorialCard from './tutorial-card.svelte';
-	import { getLocale, localizeHref } from '../../../paraglide/runtime';
-	import { tutorialLangs } from '../../../helpers';
-	import { m } from '../../../paraglide/messages';
+	import { tutorialLangs } from '../../../../helpers';
+	import { m } from '../../../../paraglide/messages';
 	import Link from '@/components/link.svelte';
+	import { getLocale, localizeHref } from '../../../../paraglide/runtime';
 
 	const collection = getCollection();
 	const currTopic = $derived(collection[getLocale()].find((t) => t.slug === topic));
@@ -80,7 +80,7 @@
 				<div class="flex flex-row gap-2">
 					<span class="font-semibold uppercase">{lang}</span>
 					<a
-						href={localizeHref(`/${topic}/${tutorial}`, { locale: lang })}
+						href={localizeHref(`/tutorials/${topic}/${tutorial}`, { locale: lang })}
 						class="flex flex-row items-center gap-2 text-sky-700 transition-opacity duration-75 hover:opacity-70"
 					>
 						<span>{tut.title}</span>
@@ -136,7 +136,10 @@
 			class="container flex w-full flex-row flex-wrap content-center items-center justify-between gap-2"
 		>
 			{#each relatedTutorials as tutorial}
-				<Link href="/{topic}/{tutorial.slug}" class="h-32 w-full flex-none md:flex-1/3 lg:flex-1/5">
+				<Link
+					href="/tutorials/{topic}/{tutorial.slug}"
+					class="h-32 w-full flex-none md:flex-1/3 lg:flex-1/5"
+				>
 					<TutorialCard {tutorial} />
 				</Link>
 			{/each}
