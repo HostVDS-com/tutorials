@@ -20,7 +20,7 @@
 
 	let mdContainer = $state<HTMLDivElement>();
 
-	const toc = $derived.by(() => {
+	const contents = $derived.by(() => {
 		const content = currTutorial?.content;
 
 		if (!content) return [];
@@ -29,7 +29,7 @@
 		return [...mdContainer.querySelectorAll('h1, h2, h3, h4, h5, h6')].map((h) => {
 			return {
 				title: h.textContent,
-				level: h.tagName.toLowerCase().replace('h', ''),
+				level: h.tagName.toLowerCase().replace(/\s/g, '-'),
 				id: h.id
 			};
 		});
@@ -112,9 +112,9 @@
 {#if currTopic && currTutorial}
 	<div class="mt-5"></div>
 	<div class="flex flex-col gap-5">
-		<h1 class="text-5xl font-bold">{currTutorial.title}</h1>
+		<h1 class="text-4xl font-bold md:text-5xl">{currTutorial.title}</h1>
 	</div>
-	<div class="flex flex-row gap-2">
+	<div class="flex flex-row flex-wrap gap-2">
 		{@render tags()}
 	</div>
 
@@ -125,7 +125,7 @@
 			{@html currTutorial.markdown}
 		</div>
 	</div>
-	<div class="flex flex-row gap-2">
+	<div class="flex flex-row flex-wrap gap-2">
 		{@render tags()}
 	</div>
 	{#if relatedTutorials.length > 0}
@@ -136,10 +136,7 @@
 			class="container flex w-full flex-row flex-wrap content-center items-center justify-between gap-2"
 		>
 			{#each relatedTutorials as tutorial}
-				<Link
-					href="/{topic}/{tutorial.slug}"
-					class="h-32 w-full flex-none transition-opacity duration-75 hover:opacity-70 md:flex-1/3 lg:flex-1/5"
-				>
+				<Link href="/{topic}/{tutorial.slug}" class="h-32 w-full flex-none md:flex-1/3 lg:flex-1/5">
 					<TutorialCard {tutorial} />
 				</Link>
 			{/each}

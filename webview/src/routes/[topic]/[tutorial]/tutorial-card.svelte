@@ -10,8 +10,11 @@
 	} = $props();
 </script>
 
-<Card.Root class="flex-fone h-32 w-full md:flex-1/3 lg:flex-1/5">
+<Card.Root class="h-36 w-full" title={tutorial.title}>
 	<Card.Header>
-		<Card.Title>{tutorial.title}</Card.Title>
+		<Card.Title class="line-clamp-2 text-sm">{tutorial.title}</Card.Title>
+		<Card.Description class="ellipsis line-clamp-3 overflow-hidden text-xs"
+			>{tutorial.description}</Card.Description
+		>
 	</Card.Header>
 </Card.Root>

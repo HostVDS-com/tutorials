@@ -37,17 +37,12 @@
 			<h2 class="text-4xl font-semibold">{m.tutorials()}</h2>
 		</div>
 
-		<div
-			class="container flex w-full flex-row flex-wrap content-center items-center justify-between gap-2"
-		>
+		<div class="container flex w-full flex-row flex-wrap content-center items-center">
 			{#if currTopic.tutorials.length == 0}
 				{@render noTutorials()}
 			{:else}
 				{#each currTopic.tutorials as tutorial}
-					<Link
-						href="/{topic}/{tutorial.slug}"
-						class="h-32 w-full flex-none transition-opacity duration-75 hover:opacity-70 md:flex-1/3 lg:flex-1/5"
-					>
+					<Link href="/{topic}/{tutorial.slug}" class="w-full p-1 md:w-1/2 lg:w-1/3 xl:w-1/3">
 						<TutorialCard {tutorial} />
 					</Link>
 				{/each}

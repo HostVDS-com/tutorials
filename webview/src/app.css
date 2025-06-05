@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import 'highlight.js/styles/default.css'
 
 @custom-variant dark (&:is(.dark *));
 
@@ -151,9 +152,10 @@ pre,code {
 }
 .tutorial img {
     margin: 1rem 0;
-    max-width: 600px;
+    max-width: 100%;
     max-height: 600px;
     height: auto;
+    width: auto;
 }
 .tutorial pre {
     display: inline-block;
@@ -189,4 +191,8 @@ tr {
 }
 
 tr:hover {
+}
+
+.hostvds-bg {
+    background-color: #313E6A;
 }

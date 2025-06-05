@@ -14,9 +14,7 @@
 	}
 </script>
 
-<div
-	class="flex w-full flex-row bg-sky-950/70 px-5 backdrop-blur-md will-change-scroll md:px-3 lg:px-0"
->
+<div class="hostvds-bg flex w-full flex-row px-5 will-change-scroll md:px-3 lg:px-0">
 	<div class="container m-auto flex flex-row items-center justify-between text-white">
 		<!-- left side -->
 		<div class="flex flex-row items-center text-xl">
@@ -43,15 +41,6 @@
 				<div class="mt-1 ml-2 align-middle">{m.products()}</div>
 			</a>
 
-			<!-- github link -->
-			<a
-				class="flex flex-col items-center transition-opacity hover:opacity-75"
-				target="_blank"
-				href="https://github.com/HostVDS-com/tutorials"
-			>
-				<img src={github} alt="GitHub" class="mt-[3px] h-3 md:h-4" />
-			</a>
-
 			<!-- language switcher -->
 			<div class="flex flex-col items-center">
 				<div class="flex flex-row items-center">
@@ -69,6 +58,15 @@
 					{/if}
 				</div>
 			</div>
+
+			<!-- github link -->
+			<a
+				class="flex flex-col items-center transition-opacity hover:opacity-75"
+				target="_blank"
+				href="https://github.com/HostVDS-com/tutorials"
+			>
+				<img src={github} alt="GitHub" class="mt-[3px] h-3 md:h-4" />
+			</a>
 		</div>
 	</div>
 </div>

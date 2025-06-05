@@ -28,22 +28,22 @@
 </script>
 
 <Breadcrumb.Root>
-	<Breadcrumb.List>
+	<Breadcrumb.List class="flex-col items-start md:flex-row  md:items-center">
 		{#if currTopic}
 			<Breadcrumb.Item>
 				<Breadcrumb.Link href="/">{m.topics()}</Breadcrumb.Link>
 			</Breadcrumb.Item>
-			<Breadcrumb.Separator><ChevronRight /></Breadcrumb.Separator>
-			<Breadcrumb.Item>
+			<Breadcrumb.Separator class="hidden md:inline"><ChevronRight /></Breadcrumb.Separator>
+			<Breadcrumb.Item class="line-clamp-1 max-w-48 text-ellipsis md:max-w-96">
 				<Breadcrumb.Link href={`/${currTopic?.slug}`}>{currTopic?.title}</Breadcrumb.Link>
 			</Breadcrumb.Item>
 		{/if}
 
 		{#if currTutorial}
-			<Breadcrumb.Separator><ChevronRight /></Breadcrumb.Separator>
-			<Breadcrumb.Item>
+			<Breadcrumb.Separator class="hidden md:inline"><ChevronRight /></Breadcrumb.Separator>
+			<Breadcrumb.Item class="line-clamp-1 max-w-48 text-ellipsis md:max-w-96">
 				<Breadcrumb.Link href={`/${currTopic?.slug}/${currTutorial?.slug}`}
-					>{currTutorial?.title}</Breadcrumb.Link
+					>{currTutorial?.title}{currTutorial?.title}</Breadcrumb.Link
 				>
 			</Breadcrumb.Item>
 		{/if}

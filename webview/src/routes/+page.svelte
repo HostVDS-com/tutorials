@@ -36,12 +36,10 @@
 		</div>
 	{/if}
 
-	<div class="flex w-full flex-row flex-wrap content-center items-center justify-between gap-2">
+	<div class="container flex w-full flex-row flex-wrap content-center items-center">
 		{#each topics as topic}
-			<Link href="/{topic.slug}" class="h-32 w-full flex-none md:flex-1/3 lg:flex-1/5">
-				<Card.Root
-					class="h-32 w-full flex-none transition-shadow duration-100 hover:shadow-lg hover:shadow-gray-300 md:flex-1/3 lg:flex-1/5"
-				>
+			<Link href="/{topic.slug}" class="w-full p-1 md:w-1/2 lg:w-1/3 xl:w-1/4">
+				<Card.Root class="h-36 w-full ">
 					<Card.Header>
 						<Card.Title>{topic.title}</Card.Title>
 						<Card.Description class="h-16 overflow-hidden">{topic.description}</Card.Description>
