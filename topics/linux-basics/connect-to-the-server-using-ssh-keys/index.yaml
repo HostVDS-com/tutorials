@@ -1,0 +1,18 @@
+tags:
+  - linux
+  - ubuntu
+  - debian
+  - windows
+  - ssh
+  - ssh-keygen
+  - openssh
+  - puttygen
+  - ed25519
+  - rsa
+  - ecdsa
+
+cover: /topics/linux-basics/connect-to-the-server-using-ssh-keys/static/ru_image_00.png
+
+description:
+    ru: В статье рассмотрим как подключиться к серверу с помощью SSH-ключей. Настроим автоматическое и ручное копирование ключей на сервер. Создадим сервера на HostVDS и выполним подключение к нему с помощью SSH-ключей. Настроим дополнительную защиту подключения.
+    en: In this article we will consider how to connect to the server using SSH keys. Let's configure automatic and manual copying of keys to the server. Create a server on HostVDS and connect to it using SSH keys. Configure additional connection protection.

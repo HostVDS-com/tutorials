@@ -1,0 +1,14 @@
+tags:
+  - phpmyadmin
+  - php
+  - apache
+  - mysql
+  - ubuntu
+  - ubuntu 24.04
+  - ssl
+
+cover: /topics/installing-the-server-software/how-to-install-phpmyadmin-on-ubuntu-server/static/ru_image_00.png
+
+description:
+    ru: В статье рассмотрим как установить phpMyAdmin, php, mySQL на Ubuntu 24.04. Создадим безопасное подключение к СУБД. Настроим базовую HTTP-аутентификацию и подключение к phpMyAdmin по HTTPS.
+    en: In this article we will consider how to install phpMyAdmin, php, mySQL on Ubuntu 24.04. Create a secure connection to the DBMS. Configure basic HTTP authentication and connection to phpMyAdmin over HTTPS.
