@@ -4,7 +4,6 @@
 
 frontend/static/topics
 frontend/node_modules
-frontend/
 frontend/# Output
 frontend/.output
 frontend/.vercel
@@ -12,25 +11,19 @@ frontend/.netlify
 frontend/.wrangler
 frontend/.svelte-kit
 frontend/build
-frontend/
 frontend/# OS
 frontend/.DS_Store
 frontend/Thumbs.db
-frontend/
 frontend/# Env
 frontend/.env
 frontend/.env.*
 frontend/!.env.example
 frontend/!.env.test
-frontend/
 frontend/# Vite
 frontend/vite.config.js.timestamp-*
 frontend/vite.config.ts.timestamp-*
-frontend/
 frontend/# Paraglide
 frontend/src/lib/paraglide
-frontend/
 frontend/# Editors
 frontend/.vim
 frontend/.*.swp
-frontend/

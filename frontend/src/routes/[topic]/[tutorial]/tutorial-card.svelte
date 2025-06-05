@@ -13,7 +13,7 @@
 <Card.Root class="h-36 w-full" title={tutorial.title}>
 	<Card.Header>
 		<Card.Title class="line-clamp-2 text-sm">{tutorial.title}</Card.Title>
-		<Card.Description class="ellipsis line-clamp-3 overflow-hidden text-xs"
+		<Card.Description class="ellipsis line-clamp-3 overflow-hidden text-xs font-normal"
 			>{tutorial.description}</Card.Description
 		>
 	</Card.Header>

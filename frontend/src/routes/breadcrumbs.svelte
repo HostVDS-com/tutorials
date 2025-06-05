@@ -43,7 +43,7 @@
 			<Breadcrumb.Separator class="hidden md:inline"><ChevronRight /></Breadcrumb.Separator>
 			<Breadcrumb.Item class="line-clamp-1 max-w-48 text-ellipsis md:max-w-96">
 				<Breadcrumb.Link href={`/${currTopic?.slug}/${currTutorial?.slug}`}
-					>{currTutorial?.title}{currTutorial?.title}</Breadcrumb.Link
+					>{currTutorial?.title}</Breadcrumb.Link
 				>
 			</Breadcrumb.Item>
 		{/if}

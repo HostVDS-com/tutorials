@@ -28,26 +28,26 @@
 	{#if contents}
 		<!-- render table of content -->
 		<div class="mb-2 flex flex-col gap-5">
-			<div class="px-2 text-xl font-semibold hover:opacity-75">{m.content()}</div>
+			<div class="px-2 text-xl font-bold text-gray-800">{m.content()}</div>
 		</div>
 		<div class="flex flex-col gap-1">
 			{#each contentsFilter as content}
 				<a
 					href={`#${content.id}`}
 					class={cn(
-						'flex cursor-pointer flex-col rounded px-3 py-2 text-gray-800 hover:bg-gray-200'
+						'hovers:bg-gray-200 flex cursor-pointer flex-col rounded px-3 py-1 text-gray-500 transition-colors duration-100 hover:text-gray-900'
 					)}
 				>
-					<div class="">{content.title}</div>
+					<div class="text-md font-semibold">{content.title}</div>
 				</a>
 			{/each}
 		</div>
 	{:else}
 		<!-- render topics list -->
 		<div class="mb-2 flex flex-col gap-5">
-			<Link href="/"
-				><div class="px-2 text-xl font-semibold hover:opacity-75">{m.topics()}</div></Link
-			>
+			<div class="px-2 text-xl font-bold text-gray-800">
+				{m.topics()}
+			</div>
 		</div>
 
 		<div class="flex flex-col gap-1">
@@ -59,7 +59,7 @@
 						{ ' bg-gray-200 text-sky-500': topic.slug === currTopicSlug }
 					)}
 				>
-					<div class="">{topic.title}</div>
+					<div class="text-md font-semibold">{topic.title}</div>
 				</Link>
 			{/each}
 		</div>

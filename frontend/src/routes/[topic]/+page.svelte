@@ -22,13 +22,13 @@
 		class="container flex w-full flex-row flex-wrap content-center items-center justify-between gap-2"
 	>
 		<h1
-			class="mt-2 mb-5 flex w-full flex-row flex-wrap content-center items-center justify-between px-1 text-5xl font-semibold whitespace-pre-wrap"
+			class="mt-2 mb-5 flex w-full flex-row flex-wrap content-center items-center justify-between px-1 text-4xl font-black whitespace-pre-wrap"
 		>
 			{currTopic.title}
 		</h1>
 
 		<p
-			class="text-md mb-5 flex w-full flex-row flex-wrap content-center items-center justify-between px-1 whitespace-pre-wrap"
+			class="text-md mb-5 flex w-full flex-row flex-wrap content-center items-center justify-between px-1 text-lg whitespace-pre-wrap opacity-80"
 		>
 			{currTopic.description}
 		</p>

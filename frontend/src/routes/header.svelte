@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import github from '@/static/github-white.svg';
-	import logo from '@/static/logo.svg';
+	import logo from '@/static/logo_white.svg';
 	import { type AvailableLanguageTag } from '$lib/paraglide/runtime';
 	import * as m from '../paraglide/messages.js';
 	import { reroute } from '../hooks';
@@ -9,7 +9,7 @@
 	import Link from '@/components/link.svelte';
 
 	function switchToLanguage(newLanguage: AvailableLanguageTag) {
-		setLocale(newLanguage);
+		setLocale(newLanguage, { reload: true });
 		reroute({ url: page.url });
 	}
 </script>
@@ -20,8 +20,7 @@
 		<div class="flex flex-row items-center text-xl">
 			<!-- logo -->
 			<Link class="flex flex-row items-center" href="/">
-				<img src={logo} alt="HostVDS Community Tutorials" class="h-[25px] md:h-[45px]" />
-				<h3 class="mt-1 ml-2 hidden align-middle md:flex">Community Tutorials</h3>
+				<img src={logo} alt="HostVDS Community Tutorials" class="h-[20px] w-auto md:h-[25px]" />
 			</Link>
 		</div>
 

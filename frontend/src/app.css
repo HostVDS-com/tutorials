@@ -121,7 +121,8 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Epilogue", sans-serif;
+    /* font-family: "Epilogue", sans-serif; */
+    font-family: "Nunito Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
 }
@@ -131,7 +132,8 @@ html,body {
     background-color: rgba(249, 250, 251, 0.6);
 }
 html {
-    font-family: "Inter", sans-serif;
+    font-family: "Nunito Sans", sans-serif;
+    letter-spacing: -0.001em;
     font-optical-sizing: auto;
     font-style: normal;
 
@@ -195,4 +197,9 @@ tr:hover {
 
 .hostvds-bg {
     background-color: #313E6A;
+}
+
+br {
+  margin-bottom: 0.15em;
+  margin-top: 0.15em;
 }

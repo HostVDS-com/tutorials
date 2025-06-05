@@ -59,7 +59,7 @@
 {#snippet tags()}
 	{#each currTutorial?.tags ?? [] as tag (tag)}
 		<div
-			class="min-w-10 rounded bg-gray-400/90 px-[0.4rem] py-[0.1rem] text-center font-mono text-[0.65rem] font-bold text-white"
+			class="min-w-10 rounded bg-gray-400/90 px-[0.4rem] py-[0.1rem] text-center text-[0.65rem] font-semibold text-white"
 		>
 			{tag}
 		</div>
@@ -112,9 +112,9 @@
 {#if currTopic && currTutorial}
 	<div class="mt-5"></div>
 	<div class="flex flex-col gap-5">
-		<h1 class="text-4xl font-bold md:text-5xl">{currTutorial.title}</h1>
+		<h1 class="text-4xl font-black md:text-5xl">{currTutorial.title}</h1>
 	</div>
-	<div class="flex flex-row flex-wrap gap-2">
+	<div class="flex flex-row flex-wrap gap-2 opacity-80">
 		{@render tags()}
 	</div>
 
