@@ -82,8 +82,10 @@
 			container: !currTutorial
 		})}
 	>
-		<div class="flex h-full min-h-screen w-full flex-row gap-0 pt-[75px] md:gap-1 lg:gap-3 lg:px-5">
-			<div class="fixed top-0 right-0 left-0 z-10 flex h-[75px]">
+		<div
+			class="flex h-full min-h-screen w-full flex-row gap-0 pt-[135px] md:gap-1 lg:gap-3 lg:px-5"
+		>
+			<div class="fixed top-0 right-0 left-0 z-10 flex h-[118px]">
 				<Header />
 			</div>
 
@@ -97,7 +99,7 @@
 			{/if}
 
 			<!-- main content -->
-			<div class={cn('mx-auto flex h-full w-full p-3 py-10')}>
+			<div class={cn('mx-auto flex h-full w-full p-3 pb-10')}>
 				<div class="flex w-full flex-col">
 					<div class="flex flex-row tracking-[-0.02em]">
 						{#key page.url}

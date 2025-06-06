@@ -34,17 +34,21 @@
 				<Breadcrumb.Link href="/tutorials/">{m.topics()}</Breadcrumb.Link>
 			</Breadcrumb.Item>
 			<Breadcrumb.Separator class="hidden md:inline"><ChevronRight /></Breadcrumb.Separator>
-			<Breadcrumb.Item class="line-clamp-1 max-w-48 text-ellipsis md:max-w-96">
-				<Breadcrumb.Link href={`/tutorials/${currTopic?.slug}`}>{currTopic?.title}</Breadcrumb.Link>
+			<Breadcrumb.Item class="line-clamp-1 max-w-96 text-ellipsis">
+				{#if currTutorial}
+					<Breadcrumb.Link href={`/tutorials/${currTopic?.slug}`}
+						>{currTopic?.title}</Breadcrumb.Link
+					>
+				{:else}
+					{currTopic?.title}
+				{/if}
 			</Breadcrumb.Item>
 		{/if}
 
 		{#if currTutorial}
 			<Breadcrumb.Separator class="hidden md:inline"><ChevronRight /></Breadcrumb.Separator>
-			<Breadcrumb.Item class="line-clamp-1 max-w-48 text-ellipsis md:max-w-96">
-				<Breadcrumb.Link href={`/tutorials/${currTopic?.slug}/${currTutorial?.slug}`}
-					>{currTutorial?.title}</Breadcrumb.Link
-				>
+			<Breadcrumb.Item class="line-clamp-1 max-w-96 text-ellipsis">
+				{currTutorial?.title}
 			</Breadcrumb.Item>
 		{/if}
 	</Breadcrumb.List>

@@ -138,7 +138,7 @@ html {
     font-style: normal;
 
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
+    scroll-padding-top: 145px;
 }
 
 pre,code {
@@ -197,6 +197,7 @@ tr:hover {
 
 .hostvds-bg {
     background-color: #313E6A;
+    background-color: #2A44A0;
 }
 
 br {

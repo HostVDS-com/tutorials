@@ -24,7 +24,7 @@
 	});
 </script>
 
-<div class="sticky top-[100px] flex flex-col gap-2 p-2">
+<div class="sticky top-[135px] flex flex-col gap-2 p-2">
 	{#if contents}
 		<!-- render table of content -->
 		<div class="mb-2 flex flex-col gap-5">
@@ -68,6 +68,7 @@
 			<a
 				class="flex flex-col text-gray-800 hover:text-sky-500"
 				href="https://hostvds.com"
+				rel="external"
 				target="_blank"
 			>
 				<div class="flex w-full flex-col gap-1 text-xs">Community Tutorials by HostVDS</div>
@@ -75,6 +76,7 @@
 		</div>
 		<div class="flex flex-col gap-1 px-3 align-middle text-xs">
 			<a
+				rel="external"
 				href="https://github.com/HostVDS-com/tutorials"
 				target="_blank"
 				class="flex flex-row items-center text-gray-800 hover:text-sky-500"

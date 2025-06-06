@@ -22,6 +22,7 @@
 		<a
 			class="text-sky-600 hover:text-sky-600"
 			href="https://github.com/HostVDS-com/tutorials"
+			rel="external"
 			target="_blank">{m.plsSupport()}</a
 		>
 	</div>
