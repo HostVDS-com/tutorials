@@ -51,7 +51,9 @@
 	<title>{title}</title>
 	<meta name="description" content={description} />
 
-	<meta name="keywords" content={currTutorial?.tags.join(', ')} />
+	{#if currTutorial?.tags?.length}
+		<meta name="keywords" content={currTutorial?.tags.join(', ')} />
+	{/if}
 
 	{#if currTutorial?.title}
 		<meta property="og:title" content={title} />

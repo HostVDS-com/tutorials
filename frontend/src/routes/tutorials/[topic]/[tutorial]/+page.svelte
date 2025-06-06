@@ -58,11 +58,13 @@
 </svelte:head>
 {#snippet tags()}
 	{#each currTutorial?.tags ?? [] as tag (tag)}
-		<div
-			class="min-w-10 rounded bg-gray-400/90 px-[0.4rem] py-[0.1rem] text-center text-[0.65rem] font-semibold text-white"
-		>
-			{tag}
-		</div>
+		<Link href={`/tutorials/tags/${tag}`} target="_blank"
+			><div
+				class="min-w-10 rounded bg-gray-400/90 px-[0.4rem] py-[0.1rem] text-center text-[0.65rem] font-semibold text-white"
+			>
+				{tag}
+			</div>
+		</Link>
 	{/each}
 {/snippet}
 
