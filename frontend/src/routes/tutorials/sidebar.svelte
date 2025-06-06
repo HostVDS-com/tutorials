@@ -17,6 +17,7 @@
 
 	const topics = $derived(collection[getLocale()].filter((t) => t.tutorials.length > 0));
 	let currTopicSlug = $derived(page.params.topic);
+	let currTutorialSlug = $derived(page.params.tutorial);
 
 	const contentsFilter = $derived.by(() => {
 		if (!contents) return [];
@@ -77,12 +78,12 @@
 		<div class="flex flex-col gap-1 px-3 align-middle text-xs">
 			<a
 				rel="external"
-				href="https://github.com/HostVDS-com/tutorials"
+				href={`https://github.com/HostVDS-com/tutorials/blob/main/topics/${currTopicSlug}/${currTutorialSlug}/${getLocale()}.md`}
 				target="_blank"
 				class="flex flex-row items-center text-gray-800 hover:text-sky-500"
 			>
 				<span>{m.contribute()}</span>
-				<img src={github} alt="GitHub" class="ml-[2px] h-3 w-3" />
+				<img src={github} alt="GitHub" class="ml-[4px] h-3 w-3" />
 			</a>
 		</div>
 	{/if}

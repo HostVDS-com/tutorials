@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 
 	import { getCollection } from '../../context.svelte';
+	import github from '@/static/github.svg';
 	const { topic, tutorial } = page.params;
 
 	import TutorialCard from './tutorial-card.svelte';
@@ -129,6 +130,16 @@
 	</div>
 	<div class="flex flex-row flex-wrap gap-2">
 		{@render tags()}
+	</div>
+	<div class="flex w-full">
+		<a
+			rel="external"
+			href={`https://github.com/HostVDS-com/tutorials/blob/main/topics/${topic}/${tutorial}/${getLocale()}.md`}
+			target="_blank"
+			class="flex flex-row items-center text-sky-500 hover:text-sky-800"
+		>
+			<span>{m.editArticle()}</span>
+		</a>
 	</div>
 	{#if relatedTutorials.length > 0}
 		<div class="flex w-full">
