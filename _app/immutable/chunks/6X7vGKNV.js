@@ -1,1 +1,0 @@
-import{i,n as c,b as _,e as h,h as r,j as k,k as d,l,m as u,U as y}from"./m7HUMyHv.js";function v(n,f,t){r&&k();var e=n,s=y,a,o=i()?c:_;h(()=>{o(s,s=f())&&(a&&d(a),a=l(()=>t(e)))}),r&&(e=u)}export{v as k};
