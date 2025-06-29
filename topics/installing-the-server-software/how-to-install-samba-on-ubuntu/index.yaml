@@ -1,0 +1,14 @@
+tags:
+  - samba
+  - samba server
+  - smbclient
+  - ubuntu
+  - ubuntu 24.04
+  - wireguard
+  - ufc
+  
+cover: /topics/installing-the-server-software/how-to-install-samba-on-ubuntu/static/ru_image_00.png
+
+description:
+    ru: В статье рассмотрим установку Samba на Ubuntu 24.04. Настроим сервер, обеспечим защиту корпоративной сети с помощью ufw и создания туннели wireguard. Затем покажем логику настройки пользователей и директорий на сервере Samba. После этого автоматизируем работу с помощью скрипта. Проверим корректность его выполнения на сервере и через подключение с клиентского компьютера.
+    en: In this article, we will install Samba on Ubuntu 24.04. We will configure the server, secure the corporate network by using ufw and creating wireguard tunnels. Then, we will demonstrate the logic of configuring users and directories on the Samba server. Finally, we will automate the process using a script. We will verify its correct execution on the server and through a connection from a client computer.
