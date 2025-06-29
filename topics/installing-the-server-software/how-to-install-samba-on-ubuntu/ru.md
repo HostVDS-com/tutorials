@@ -224,7 +224,7 @@ scp jetcry@46.8.229.3:/home/jetcry/wg/client1.conf C:\Users\jetcry\Downloads\
 Запускаем приложение, нажимаем «Добавить туннель». Выбираем сохраненный конфиг, затем – «Подключить».  
 Результат:
 
-<p align="center"><img alt="wireguard на клиенте" src=/topics/installing-the-server-software/how-to-install-samba-on-ubuntu/static/ru_image_10.png width=1024></p>
+<p align="center"><img alt="wireguard на клиенте" src=/topics/installing-the-server-software/how-to-install-samba-on-ubuntu/static/ru_image_10.png width=800></p>
 
 ## Установка и первоначальная настройка Samba
 
