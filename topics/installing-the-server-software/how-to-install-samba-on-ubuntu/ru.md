@@ -611,11 +611,11 @@ smbclient //10.10.10.1/admins -U ivan
 Указываем IP-адрес сервера Samba.
 
 
-<p align="center"><img alt="Подключение к Samba с клиента" src=/topics/installing-the-server-software/how-to-install-samba-on-ubuntu/static/ru_image_18.png width=1024></p>
+<p align="center"><img alt="Подключение к Samba с клиента" src=/topics/installing-the-server-software/how-to-install-samba-on-ubuntu/static/ru_image_18.png width=800></p>
 
 При подключении вводим логин пользователя admin и его пароль:
 
-<p align="center"><img alt="Ввод данных пользователя" src=/topics/installing-the-server-software/how-to-install-samba-on-ubuntu/static/ru_image_19.png width=1024></p>
+<p align="center"><img alt="Ввод данных пользователя" src=/topics/installing-the-server-software/how-to-install-samba-on-ubuntu/static/ru_image_19.png width=600></p>
 
 Проверим, что пользователь admin может зайти в другие директории и создать там файлы:
 
