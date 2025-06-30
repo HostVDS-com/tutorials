@@ -1,0 +1,17 @@
+tags:
+  - nextcloud
+  - ubuntu
+  - ubuntu 24.04
+  - nginx
+  - mysql
+  - php
+  - ssl
+  - let's encrypt
+  - redis
+  - APCu
+  
+cover: /topics/installing-the-server-software/how-to-install-nextcloud-on-ubuntu/static/ru_image_00.png
+
+description:
+    ru: В статье рассмотрим установку Nextcloud на Ubuntu 24.04. Настроим MySQL, Nginx, PHP. Получим сертификат от Let's Encrypt. Настроим конфигурацию Nginx для HTTPS. Используем APCu для локального кэширования, а Redis — для распределённого кэша и блокировки файлов. Выполним первоначальную настройку Nextcloud. 
+    en: In this article, we will consider installing Nextcloud on Ubuntu 24.04. We will configure MySQL, Nginx, PHP. We will receive a certificate from Let's Encrypt. Let's configure Nginx configuration for HTTPS. We use APCu for local caching, and Redis for distributed caching and file locking. Let's perform the initial configuration of Nextcloud.
