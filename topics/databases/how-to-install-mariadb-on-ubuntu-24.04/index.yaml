@@ -10,4 +10,4 @@ cover: /topics/databases/how-to-install-mariadb-on-ubuntu-24.04/static/ru_image_
 
 description:
     ru: В статье рассмотрим установку MariaDB на Ubuntu 24.04. Настроим пользователей. Получим сертификат от Let's Encrypt. Настроим удаленное подключение к MariaDB по SSL. Выполним конфигурацию ufw. 
-    en: n this article, we'll look at installing MariaDB on Ubuntu 24.04. We'll configure users. We will receive a certificate from Let's Encrypt. Let's set up a remote connection to MariaDB over SSL. Let's run the ufw configuration.
+    en: In this article, we'll look at installing MariaDB on Ubuntu 24.04. We'll configure users. We will receive a certificate from Let's Encrypt. Let's set up a remote connection to MariaDB over SSL. Let's run the ufw configuration.
