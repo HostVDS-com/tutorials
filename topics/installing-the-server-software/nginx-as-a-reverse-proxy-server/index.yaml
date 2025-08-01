@@ -1,0 +1,18 @@
+tags:
+  - nextcloud
+  - ubuntu
+  - ubuntu 24.04
+  - nginx
+  - reverse-proxy
+  - reverse-proxy nginx
+  - php
+  - ssl
+  - let's encrypt
+  - fail2ban
+  - ufw
+    
+cover: /topics/installing-the-server-software/nginx-as-a-reverse-proxy-server/static/ru_image_00.png
+
+description:
+    ru: В статье рассмотрим настройку двух серверов: reverse-proxy на Nginx и бэкенда Nextcloud. Создадим защищенное соединение между серверами. Настроим ufw и fail2ban на прокси-сервере. Выполним первоначальную настройку Nextcloud. Проверим сервер на безопасность с помощью сервиса от Nextcloud.
+    en: In this article, we will look at configuring two servers: the reverse proxy on Nginx and the Nextcloud backend. We will set up a secure connection between the servers. Configure ufw and fail2ban on the proxy server. Let's perform the initial configuration of Nextcloud. Let's check the server for security using the Nextcloud service.
