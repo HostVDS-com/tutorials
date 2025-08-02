@@ -603,7 +603,7 @@ sudo ufw enable && sudo ufw reload  && sudo ufw status
 
 ## Настройки  бэкенда Nextcloud
 
-Настроим сервер как в нашей [статье про установку Nextcloud](https://github.com/HostVDS-com/tutorials/blob/how-to-install-nextcloud-on-ubuntu/topics/installing-the-server-software/how-to-install-nextcloud-on-ubuntu/ru.md).
+Настроим сервер как в нашей [статье про установку Nextcloud](https://github.com/HostVDS-com/tutorials/blob/main/topics/installing-the-server-software/how-to-install-nextcloud-on-ubuntu/ru.md).
 
 Мы рекомендуем выполнить полную установку по этой статье, а потом просто внести изменения в конфигурацию следующих файлов:  
 •	/var/www/nextcloud/config/config.php  
