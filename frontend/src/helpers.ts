@@ -101,11 +101,9 @@ export async function fetchCollection(): Promise<Collection> {
             // get last modification time
             const stat = await fs.stat(path.resolve(tutorialPath, lang + '.md'));
             const updatedAt = new Date(stat.mtime.toISOString());
-
             const contentFmt = content
-                .replaceAll('https://github.com/HostVDS-com/tutorials/blob/main/topics/', '/')
+                .replaceAll('https://github.com/HostVDS-com/tutorials/blob/main/topics/', `/${lang}/tutorials/`)
                 .replace(/\/..\.md/, '')
-
 
             const options: mdvs.MdsvexOptions = {
                 rehypePlugins: [
@@ -141,7 +139,7 @@ export async function fetchCollection(): Promise<Collection> {
                     },
                 }
             };
-            const md = await mdvs.compile(content, options);
+            const md = await mdvs.compile(contentFmt, options);
             if (!md) {
                 throw new Error(`tutorial ${tutorialPath} is malformed:\n${stringify(tutorialIndex)}`);
             }
